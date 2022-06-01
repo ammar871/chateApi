@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 
-
+using aucationApi.Models;
 namespace aucationApi.Data
 {
 
@@ -12,9 +12,9 @@ namespace aucationApi.Data
     {
 
         public AucationApiContext(DbContextOptions<AucationApiContext> otp) : base(otp)
-        {
+                     {}
 
-        }
+        
 
 
 
