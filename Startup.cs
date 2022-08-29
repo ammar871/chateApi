@@ -1,23 +1,29 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using chatApi.Data;
+using chatApi.Models;
+using chatApi.Notification;
+using chatApi.Profiles;
+using CorePush.Apple;
+using CorePush.Google;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-// using aucationApi.Data;
-// using aucationApi.Profile;
 
-// using aucationApi.Notification;
-
-
-namespace aucationApi
+namespace chatApi
 {
     public class Startup
     {
@@ -31,6 +37,18 @@ namespace aucationApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+// IdentityOptions
+services.Configure<IdentityOptions>(
+    options =>
+    {
+        options.Password.RequireDigit = false;
+        options.Password.RequiredLength = 5;
+        options.Password.RequireLowercase = false;
+        options.Password.RequireUppercase = false;
+    }
+);
+
+
 
                  //   notification
             services.AddTransient<INotificationService, NotificationService>();
@@ -42,8 +60,18 @@ namespace aucationApi
             services.Configure<FcmNotificationSetting>(appSettingsSection);
 // ---------------
 
-            services.AddDbContext<AucationApiContext>(otp =>
-               otp.UseSqlServer(Configuration.GetConnectionString("AucationApiConnection")));
+         
+
+         //mysql
+             string mySqlConnectionStr = Configuration.GetConnectionString("ChatApiConnection");
+            services.AddDbContextPool<DBContext>(options =>
+            {
+                options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr));
+                options.EnableSensitiveDataLogging();
+            });
+
+
+
 
 
             services.AddCors(options =>
@@ -67,7 +95,7 @@ namespace aucationApi
             services.AddControllers();
             var config = new AutoMapper.MapperConfiguration(cfg =>
                         {
-                            cfg.AddProfile(new AuctionApiProfile());
+                            cfg.AddProfile(new ChatApiProfile());
                         });
             var mapper = config.CreateMapper();
             services.AddSingleton(mapper);
@@ -78,13 +106,13 @@ namespace aucationApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "aucationApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "chatApi", Version = "v1" });
             });
 
 
             // For Identity  
             services.AddIdentity<User, IdentityRole>()
-                    .AddEntityFrameworkStores<AucationApiContext>()
+                    .AddEntityFrameworkStores<DBContext>()
                     .AddDefaultTokenProviders();
 
 
