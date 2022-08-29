@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace aucationApi.Notification{
+namespace chatApi.Notification{
 
 
  public class NotificationData

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace aucationApi.Models
+namespace chatApi.Models
 {
     public class UserDetailResponse
     {
@@ -14,7 +14,7 @@ namespace aucationApi.Models
         public string FullName { get; set; }
         public string ImageUrl { get; set; }
         public string Status { get; set; }
-
+        public string Name { get; set; }
 
         
 

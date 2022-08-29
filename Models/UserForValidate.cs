@@ -1,5 +1,5 @@
 ﻿using System;
-namespace aucationApi.Models
+namespace chatApi.Models
 {
     public class UserForValidate
     {

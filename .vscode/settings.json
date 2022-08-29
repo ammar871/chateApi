@@ -1,3 +1,5 @@
 {
-    "typescript.format.insertSpaceAfterTypeAssertion": true
+    "C_Cpp.errorSquiggles": "Enable",
+    "typescript.format.insertSpaceAfterTypeAssertion": true,
+
 }

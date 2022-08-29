@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\web\\aucationApi\\aucationApi.csproj": {}
+    "F:\\web\\chatApi\\aucationApi.csproj": {}
   },
   "projects": {
-    "F:\\web\\aucationApi\\aucationApi.csproj": {
+    "F:\\web\\chatApi\\aucationApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\web\\aucationApi\\aucationApi.csproj",
+        "projectUniqueName": "F:\\web\\chatApi\\aucationApi.csproj",
         "projectName": "aucationApi",
-        "projectPath": "F:\\web\\aucationApi\\aucationApi.csproj",
+        "projectPath": "F:\\web\\chatApi\\aucationApi.csproj",
         "packagesPath": "C:\\Users\\obama\\.nuget\\packages\\",
-        "outputPath": "F:\\web\\aucationApi\\obj\\",
+        "outputPath": "F:\\web\\chatApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\obama\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -91,6 +91,10 @@
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
               "version": "[5.0.9, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.0-beta.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

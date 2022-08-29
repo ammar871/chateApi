@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using CorePush.Google;
 
 using Microsoft.Extensions.Options;
-using static aucationApi.Notification.GoogleNotification;
+using static chatApi.Notification.GoogleNotification;
 
-namespace aucationApi.Notification{
+namespace chatApi.Notification{
 
  public interface INotificationService
     {

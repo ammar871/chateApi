@@ -750,6 +750,15 @@
           }
         }
       },
+      "MySqlConnector/1.3.4": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/MySqlConnector.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/MySqlConnector.dll": {}
+        }
+      },
       "Newtonsoft.Json/12.0.3": {
         "type": "package",
         "compile": {
@@ -769,6 +778,20 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Pomelo.EntityFrameworkCore.MySql/5.0.0-beta.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "[5.0.5, 6.0.0)",
+          "Microsoft.Extensions.DependencyInjection": "5.0.1",
+          "MySqlConnector": "1.3.4"
+        },
+        "compile": {
+          "lib/netstandard2.1/Pomelo.EntityFrameworkCore.MySql.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Pomelo.EntityFrameworkCore.MySql.dll": {}
         }
       },
       "Portable.BouncyCastle/1.8.9": {
@@ -2953,6 +2976,36 @@
         "version.txt"
       ]
     },
+    "MySqlConnector/1.3.4": {
+      "sha512": "Q5m+Kd1GkirH+2Ftfl2yJBXRIiSxydctav6sIapThNSNK0aoz9L+ibKpD/9PEsE1a8Vpdb+IxMUgB/atICCpzw==",
+      "type": "package",
+      "path": "mysqlconnector/1.3.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/MySqlConnector.dll",
+        "lib/net45/MySqlConnector.xml",
+        "lib/net461/MySqlConnector.dll",
+        "lib/net461/MySqlConnector.xml",
+        "lib/net471/MySqlConnector.dll",
+        "lib/net471/MySqlConnector.xml",
+        "lib/net5.0/MySqlConnector.dll",
+        "lib/net5.0/MySqlConnector.xml",
+        "lib/netcoreapp2.1/MySqlConnector.dll",
+        "lib/netcoreapp2.1/MySqlConnector.xml",
+        "lib/netcoreapp3.1/MySqlConnector.dll",
+        "lib/netcoreapp3.1/MySqlConnector.xml",
+        "lib/netstandard1.3/MySqlConnector.dll",
+        "lib/netstandard1.3/MySqlConnector.xml",
+        "lib/netstandard2.0/MySqlConnector.dll",
+        "lib/netstandard2.0/MySqlConnector.xml",
+        "lib/netstandard2.1/MySqlConnector.dll",
+        "lib/netstandard2.1/MySqlConnector.xml",
+        "logo.png",
+        "mysqlconnector.1.3.4.nupkg.sha512",
+        "mysqlconnector.nuspec"
+      ]
+    },
     "Newtonsoft.Json/12.0.3": {
       "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "type": "package",
@@ -3003,6 +3056,20 @@
         "lib/netstandard2.0/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.2.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "Pomelo.EntityFrameworkCore.MySql/5.0.0-beta.1": {
+      "sha512": "0rSASSYTXz/aghdbA6z4aXs3d4dHGSkOMHQ1Fg/hcpL39q0qSOaZ/7T6Q1tX3kQvG0Zbln4qNbjbVoI5pO2hWg==",
+      "type": "package",
+      "path": "pomelo.entityframeworkcore.mysql/5.0.0-beta.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.1/Pomelo.EntityFrameworkCore.MySql.dll",
+        "lib/netstandard2.1/Pomelo.EntityFrameworkCore.MySql.xml",
+        "pomelo.entityframeworkcore.mysql.5.0.0-beta.1.nupkg.sha512",
+        "pomelo.entityframeworkcore.mysql.nuspec"
       ]
     },
     "Portable.BouncyCastle/1.8.9": {
@@ -6374,6 +6441,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 5.0.7",
       "Microsoft.EntityFrameworkCore.sqlserver >= 5.0.7",
       "Microsoft.Extensions.Identity.Stores >= 5.0.9",
+      "Pomelo.EntityFrameworkCore.MySql >= 5.0.0-beta.1",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -6383,11 +6451,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\web\\aucationApi\\aucationApi.csproj",
+      "projectUniqueName": "F:\\web\\chatApi\\aucationApi.csproj",
       "projectName": "aucationApi",
-      "projectPath": "F:\\web\\aucationApi\\aucationApi.csproj",
+      "projectPath": "F:\\web\\chatApi\\aucationApi.csproj",
       "packagesPath": "C:\\Users\\obama\\.nuget\\packages\\",
-      "outputPath": "F:\\web\\aucationApi\\obj\\",
+      "outputPath": "F:\\web\\chatApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\obama\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6467,6 +6535,10 @@
           "Microsoft.Extensions.Identity.Stores": {
             "target": "Package",
             "version": "[5.0.9, )"
+          },
+          "Pomelo.EntityFrameworkCore.MySql": {
+            "target": "Package",
+            "version": "[5.0.0-beta.1, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
